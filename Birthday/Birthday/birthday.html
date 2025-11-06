@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Gokul</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        background: linear-gradient(135deg, #7c3695, #0d5fd1b4);
+        color: rgb(11, 1, 1);
+    }
+
+    h1 {
+        margin-top: 40px;
+        font-size: 42px;
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        margin: 30px auto;
+        width: 80%;
+        max-width: 400px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .button {
+        padding: 12px 25px;
+        background: #8841be;
+        border: none;
+        border-radius: 10px;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 20px;
+    }
+
+    .button:hover {
+        background: #e03eac;
+    }
+
+    #surprise {
+        display: none;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+    #surprise {
+        color:white;
+    }
+    #surprise{
+       position: relative;
+       padding:20px;
+       border-radius:15px;
+       overflow:hidden;
+       color:white;
+       font-size:20px;
+    }
+  .heart {
+    position: absolute;
+    font-size: 40px;            /* ✅ Medium size */
+    animation: floatUp 4s linear infinite, glitter 1s ease-in-out infinite;
+    opacity: 0.95;
+    pointer-events: none;
+    filter: drop-shadow(0 0 6px #ff80c8) drop-shadow(0 0 12px #ff80c8);
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(20px) scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(1.2) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+
+</style>
+
+</head>
+<body>
+
+<h1>🎉 Happiest Birthday Gokul..!! 🎂💜</h1>
+
+<div class="card">
+    I made a small surprise for you! <br>
+    Click the button below..🤗
+</div>
+
+<button class="button" onclick="showSurprise()">Open Surprise 🎉</button>
+
+<div id="surprise">
+     💜✨Happy Birthday Gokul..I hope your day filled with love, laughter, and joy..<br>
+     And I wish the upcoming days also to be filled with whatever you desire..We may fight a lot,<br>Argue each other but other than that I will be your little sister as always🫶🏻<br>
+     And You are the best brother in the entire world✨💜
+    <br>
+      
+    <br>
+     Enjoy your day..!!🤩🤩
+</div>
+<audio id="song">
+  <source src="Brother song.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="document.getElementById('song').play()" 
+style="padding: 12px 25px; background: #e03eac; color: white; border: none; border-radius: 10px; font-size: 18px; cursor: pointer;">
+  Play Song 🎵
+</button>
+
+<script>
+function showSurprise() {
+    document.getElementById('surprise').style.display = "block";
+}
+
+</script>
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤";
+
+    const surpriseBox = document.getElementById("surprise");
+    const boxWidth = surpriseBox.offsetWidth;
+
+    // random position
+    heart.style.left = Math.random() * boxWidth + "px";
+
+    // optional: random heart colors (pink, purple)
+    const colors = ["#ff5f8f", "#ff80c8", "#ff9bd6", "#ffb3e6"];
+    heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+    surpriseBox.appendChild(heart);
+
+    // remove after animation
+    setTimeout(() => heart.remove(), 4000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+
+</body>
+</html>
